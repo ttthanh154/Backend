@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/create">Delete User</a>
+    </div>
+
+    <div class="form-add-new">
+        <form action="/delete-user" method="POST">
+            <fieldset>
+                <legend>Delete User</legend>
+                <% listUserById.forEach((user)=> { %>
+                    <div class="input-group d-none">
+                        <label>Id</label>
+                        <input type="text" id="id" name="id" value="<%=user.id%>"></input>
+                    </div>
+                    <div class="input-group">
+                        <label>Are you sure to delete this email?</label>
+                        <input type="text" id="email" name="email" value="<%=user.email%>"></input>
+                    </div>
+                
+                    <div>
+                        <button>Delete</button>
+                    </div>
+
+                    <% }); %>
+
+            </fieldset>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
